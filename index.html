@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="utf-8" />
+      <title>Hi</title>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+      <link rel="stylesheet" href="static/style.css">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+  </head>
+
+  <body>
+    <div class = 'grid'>
+      <div class="graphcontainer">
+  		<div class="graphtitle"> Stock Data </div>
+  		<div class="legend">
+  		</div>
+  		<div class="graph">
+      	<center>
+      		<canvas id="lineChart" height='160'></canvas>
+      		<script>
+       	    var canvas = document.getElementById("lineChart");
+  			    var ctx = canvas.getContext('2d');
+
+  			    Chart.defaults.global.defaultFontSize = 16;
+  			    Chart.defaults.global.defaultFontFamily = 'Roboto';
+
+         		var data = {
+         			labels : ["10", "9", "8", "7", "6", "5", "4", "3", "2", "1"],
+         			datasets : [
+            			{
+            			label: "{{ name1 }}",
+                  	backgroundColor: 'rgba(226,280,307,.6)',
+                  	borderColor: 'rgba(75,93,102,1)',
+                 		pointBackgroundColor: 'rgba(75,93,102,1)',
+              		data: [1,2,3,4,5,3]
+            			},
+            			{
+            			label: "{{ name2 }}",
+                  	backgroundColor: "rgba(300,240,257,.6)",
+                  	borderColor: "rgba(100,93,102,1)",
+                 		pointBackgroundColor: "rgba(100,93,102,1)",
+              		data: [4,5,4,3,2]
+            			}
+            		],
+            	}
+            	var options = {
+        			legend: {
+              		display: false,
+              		labels: {
+                			fontColor: 'rgb(255, 99, 132)'
+              		}
+          		},
+          		scales: {
+  	                xAxes: [{
+  	                    display: true,
+  	                    scaleLabel: {
+  	                    display: true,
+  	                        labelString: 'Dates'
+                          }
+  	                }]
+                  },
+  			}
+
+         		var lineChart = new Chart(ctx, {
+  			    type: 'line',
+  			    data: data,
+  			    options: options
+  			});
+      		</script>
+    		</center>
+    		</div>
+    	</div>
+    </div>
+  </body>
+
+</html>
