@@ -1,6 +1,6 @@
 # Illini Datathon 2019
 
-For this project we trialled several machine learning algorithms to predict the stock prices for Bayer, Honeywell, 3m, and Synchrony from January 1 2019 until present day (February 17). We graphed the actual stock prices and our predictions. An example graph image is below. The rest can be found in their interactive forms [here.](https://www.divyabhati.com/datathon)
+For this project we trialled several machine learning algorithms to predict the stock prices for Bayer, Honeywell, 3m, and Synchrony from January 1, 2019 until present day (February 17). We graphed the actual stock prices and our predictions. An example graph image is below. The rest can be found in their interactive forms [here.](http://www.divyabhati.com/datathon)
 
 ![Bayer Graph](https://github.com/DivyaBhati/IlliniDatathon2019/blob/master/Bayer.png)
 
