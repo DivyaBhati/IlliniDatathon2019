@@ -9,7 +9,7 @@
   </head>
 
   <body>
-  	<div class="graphtitle"> Bayer  Predicted and Actual Closing Prices</div>
+  	<div class="graphtitle"> Bayer Predicted and Actual Closing Prices</div>
     <div class="graph">
   	<div class="graphcontainer">
       	<canvas id="Bayer"></canvas>
@@ -54,6 +54,13 @@
             		],
             	}
             	var options = {
+                legend: {
+                  display: true,
+                  position: 'bottom',
+                  labels: {
+                    fontColor: "#000080",
+                  }
+                },
                 maintainAspectRatio: false,
                 responsive: true,
           			legend: {
