@@ -9,68 +9,346 @@
   </head>
 
   <body>
-    <div class = 'grid'>
-      <div class="graphcontainer">
-  		<div class="graphtitle"> Stock Data </div>
-  		<div class="legend">
-  		</div>
-  		<div class="graph">
-      	<center>
-      		<canvas id="lineChart" height='160'></canvas>
-      		<script>
-       	    var canvas = document.getElementById("lineChart");
+  	<div class="graphtitle"> Bayer </div>
+    <div class="graph">
+  	<div class="graphcontainer">
+      	<canvas id="Bayer"></canvas>
+      	<script>
+       	    var canvas = document.getElementById("Bayer");
   			    var ctx = canvas.getContext('2d');
+            var stroke1 = ctx.createLinearGradient(0, 0, 1000, 0);
+            stroke1.addColorStop(0, 'rgb(254,235,226)');
+            stroke1.addColorStop(.25, 'rgb(251,180,185)');
+            stroke1.addColorStop(.5, 'rgb(247,104,161)');
+            stroke1.addColorStop(.75, 'rgb(197,27,138)');
+            stroke1.addColorStop(1, 'rgb(122,1,119)');
+
+            var stroke2 = ctx.createLinearGradient(0, 0, 1000, 0);
+            stroke2.addColorStop(0, 'rgb(255,255,178)');
+            stroke2.addColorStop(.25, 'rgb(254,204,92)');
+            stroke2.addColorStop(.5, 'rgb(253,141,60)');
+            stroke2.addColorStop(.75, 'rgb(240,59,32)');
+            stroke2.addColorStop(1, 'rgb(189,0,38)');
 
   			    Chart.defaults.global.defaultFontSize = 16;
   			    Chart.defaults.global.defaultFontFamily = 'Roboto';
+            Chart.defaults.global.defaultFontColor = '#CCCCCC';
 
          		var data = {
-         			labels : ["10", "9", "8", "7", "6", "5", "4", "3", "2", "1"],
+         			labels : [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
          			datasets : [
             			{
-            			label: "{{ name1 }}",
-                  	backgroundColor: 'rgba(226,280,307,.6)',
-                  	borderColor: 'rgba(75,93,102,1)',
-                 		pointBackgroundColor: 'rgba(75,93,102,1)',
-              		data: [1,2,3,4,5,3]
+              			label: "Predicted",
+                      backgroundColor: 'rgba(247,104,161, .1)',
+                    	borderColor: stroke1,
+                   		pointBackgroundColor: stroke1,
+                		  data: [73.81936352898515, 73.90259513964924, 73.98579740111481, 74.06897032373104, 74.15211391784342, 74.23522819379377, 74.31831316192032, 74.40136883255755, 74.48439521603643, 74.56739232268421, 74.65036016282448, 74.73329874677725, 74.81620808485883, 74.89908818738198, 74.9819390646557, 75.06476072698547, 75.14755318467309, 75.23031644801668, 75.31305052731079, 75.39575543284636, 75.47843117491058, 75.56107776378718, 75.64369520975615, 75.72628352309391, 75.8088427140732, 75.89137279296318, 75.9738737700294, 76.0563456555337, 76.13878845973446, 76.2212021928863, 76.30358686524028]
             			},
             			{
-            			label: "{{ name2 }}",
-                  	backgroundColor: "rgba(300,240,257,.6)",
-                  	borderColor: "rgba(100,93,102,1)",
-                 		pointBackgroundColor: "rgba(100,93,102,1)",
-              		data: [4,5,4,3,2]
+              			label: "Actual",
+                    backgroundColor: 'rgba(253,141,60, .1)',
+                    	borderColor: stroke2,
+                   		pointBackgroundColor: stroke2,
+                		data: [69.599998, 71.510002, 73.75, 74.699997, 76.349998, 75.309998, 76.800003, 74.410004, 74.489998, 73.639999, 73.660004, 73.730003, 73.730003, 74.019997, 74.510002, 75.510002, 75.510002, 75.879997, 75.879997, 75.07, 76.160004, 76.160004, 76.75, 78.650002, 78.650002, 76.389999, 76.339996, 76.400002, 76.400002, 76.82, 73.839996]
             			}
             		],
             	}
             	var options = {
-        			legend: {
-              		display: false,
-              		labels: {
-                			fontColor: 'rgb(255, 99, 132)'
-              		}
-          		},
-          		scales: {
-  	                xAxes: [{
-  	                    display: true,
-  	                    scaleLabel: {
-  	                    display: true,
-  	                        labelString: 'Dates'
-                          }
-  	                }]
-                  },
-  			}
+                maintainAspectRatio: false,
+                responsive: true,
+          			legend: {
+                		display: false,
+                		labels: {
+                  			fontColor: '#FF0000'
+                		}
+            		},
+            		scales: {
+    	             xAxes: [{
+                       ticks: {
+                           display: false //this will remove only the label
+                       },
+      	              display: true,
+    	                scaleLabel: {
+    	                   display: true,
+    	                   labelString: 'Time'
+                      },
+                      gridLines: {
+                        display: true,
+                        color: "rgba(255,99,132,0.2)"
+                      }
+    	             }],
+                   yAxes: [{
+                     gridLines: {
+                       display: true,
+                       color: "rgba(255,99,132,0.2)"
+                     }
+                   }],
+                },
+  			      }
 
          		var lineChart = new Chart(ctx, {
   			    type: 'line',
   			    data: data,
   			    options: options
   			});
-      		</script>
-    		</center>
-    		</div>
-    	</div>
+      	</script>
     </div>
+  </div>
+  <div class="graphtitle"> Synchrony </div>
+  <div class="graph">
+    <div class="graphcontainer">
+        <canvas id="Synchrony"></canvas>
+        <script>
+            var canvas = document.getElementById("Synchrony");
+            var ctx = canvas.getContext('2d');
+            var stroke1 = ctx.createLinearGradient(0, 0, 1000, 0);
+            stroke1.addColorStop(0, 'rgb(255,255,204)');
+            stroke1.addColorStop(.25, 'rgb(161,218,180)');
+            stroke1.addColorStop(.5, 'rgb(65,182,196)');
+            stroke1.addColorStop(.75, 'rgb(44,127,184)');
+            stroke1.addColorStop(1, 'rgb(37,52,148)');
+
+            var stroke2 = ctx.createLinearGradient(0, 0, 1000, 0);
+            stroke2.addColorStop(0, 'rgb(254,240,217)');
+            stroke2.addColorStop(.25, 'rgb(253,204,138)');
+            stroke2.addColorStop(.5, 'rgb(252,141,89)');
+            stroke2.addColorStop(.75, 'rgb(227,74,51)');
+            stroke2.addColorStop(1, 'rgb(179,0,0)');
+
+            Chart.defaults.global.defaultFontSize = 16;
+            Chart.defaults.global.defaultFontFamily = 'Roboto';
+            Chart.defaults.global.defaultFontColor = '#CCCCCC';
+
+            var data = {
+              labels : [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
+              datasets : [
+                  {
+                    label: "Predicted",
+                      backgroundColor: 'rgba(65,182,196, .2)',
+                      borderColor: stroke1,
+                      pointBackgroundColor: stroke1,
+                      data: [25.148890359815653,25.160262232719308, 25.17161009006942, 25.18293398258296, 25.194233960869767, 25.20551007543282, 25.216762376668434, 25.227990914866503, 25.239195740210715, 25.250376902778772, 25.261534452542623, 25.27266843936869, 25.28377891301808, 25.29486592314681, 25.30592951930604, 25.316969750942274, 25.32798666739761, 25.33898031790993, 25.34995075161313, 25.360898017537355, 25.371822164609206, 25.382723241651945, 25.393601297385743, 25.404456380427877, 25.41528853929295, 25.4260978223931, 25.436884278038253, 25.447647954436288, 25.458388899693286, 25.46910716181373, 25.479802788700745]
+                  },
+                  {
+                    label: "Actual",
+                    backgroundColor: 'rgba(252,141,89, .1)',
+                      borderColor: stroke2,
+                      pointBackgroundColor: stroke2,
+                    data: [24.27, 24.09, 25.24, 25.370001000000002, 25.42, 25.99, 25.75, 26.02, 25.85, 25.77, 26.379998999999998, 26.35, 26.280001000000002, 26.549999, 29.4, 29.809998999999998, 29.790001, 29.98, 29.65, 30.07, 30.040001, 29.690001000000002, 29.719998999999998, 29.99, 30.110001, 30.110001, 29.940001000000002, 30.370001000000002, 30.440001000000002, 30.77, 30.83, 31.75]
+                  }
+                ],
+              }
+              var options = {
+                maintainAspectRatio: false,
+                responsive: true,
+                legend: {
+                    display: false,
+                    labels: {
+                        fontColor: 'rgb(255, 99, 132)'
+                    }
+                },
+                scales: {
+                   xAxes: [{
+                       ticks: {
+                           display: false //this will remove only the label
+                       },
+                      display: true,
+                      scaleLabel: {
+                         display: true,
+                         labelString: 'Time'
+                      },
+                      gridLines: {
+                        display: true,
+                        color: "rgba(65,182,196, .2)"
+                      }
+                   }],
+                   yAxes: [{
+                     gridLines: {
+                       display: true,
+                       color: "rgba(65,182,196, .2)"
+                     }
+                   }],
+                },
+              }
+
+            var lineChart = new Chart(ctx, {
+            type: 'line',
+            data: data,
+            options: options
+        });
+        </script>
+    </div>
+  </div>
+  <div class="graphtitle"> Honeywell </div>
+  <div class="graph">
+    <div class="graphcontainer">
+        <canvas id="Honeywell"></canvas>
+        <script>
+            var canvas = document.getElementById("Honeywell");
+            var ctx = canvas.getContext('2d');
+            var stroke1 = ctx.createLinearGradient(0, 0, 1000, 0);
+            stroke1.addColorStop(0, 'rgb(237,248,251)');
+            stroke1.addColorStop(.25, 'rgb(179,205,227)');
+            stroke1.addColorStop(.5, 'rgb(140,150,198)');
+            stroke1.addColorStop(.75, 'rgb(136,86,167)');
+            stroke1.addColorStop(1, 'rgb(129,15,124)');
+
+            var stroke2 = ctx.createLinearGradient(0, 0, 1000, 0);
+            stroke2.addColorStop(0, 'rgb(255,255,178)');
+            stroke2.addColorStop(.25, 'rgb(254,204,92)');
+            stroke2.addColorStop(.5, 'rgb(253,141,60)');
+            stroke2.addColorStop(.75, 'rgb(240,59,32)');
+            stroke2.addColorStop(1, 'rgb(189,0,38)');
+
+            Chart.defaults.global.defaultFontSize = 16;
+            Chart.defaults.global.defaultFontFamily = 'Roboto';
+            Chart.defaults.global.defaultFontColor = '#CCCCCC';
+
+            var data = {
+              labels : [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
+              datasets : [
+                  {
+                    label: "Predicted",
+                      backgroundColor: 'rgba(140,150,198, .1)',
+                      borderColor: stroke1,
+                      pointBackgroundColor: stroke1,
+                      data: [139.9682994434897,139.9827652624783,139.99722881165133, 140.01169009136487,140.02614910197508,140.040605843838,140.05506031730962,140.06951252274584,140.08396246050253,140.09841013093552,140.1128555344006,140.12729867125344,140.14173954184974,140.15617814654505,140.1706144856949,140.18504855965483,140.19948036878026, 140.2139099134265,140.22833719394896,140.2427622107028,140.2571849640433,140.27160545432554,140.2860236819047,140.3004396471358, 140.31485335037374, 140.32926479197354, 140.34367397229005,140.35808089167804,140.3724855504923,140.38688794908757,140.40128808781841]
+                  },
+                  {
+                    label: "Actual",
+                    backgroundColor: 'rgba(253,141,60, .1)',
+                      borderColor: stroke2,
+                      pointBackgroundColor: stroke2,
+                    data: [131.830002, 130.070007, 134.619995, 135.369995, 135.08999599999999, 135.720001, 137.75, 137.360001, 137.610001, 137.770004, 138.020004, 139.880005, 141.850006, 139.820007, 140.740005, 141.179993, 141.71000700000002, 140.479996, 141.740005, 143.279999, 143.630005, 144.71000700000002, 147.929993, 148.690002, 148.899994, 148.149994, 148.610001, 148.479996, 150.360001, 151.479996, 150.520004, 153.320007]
+                  }
+                ],
+              }
+              var options = {
+                maintainAspectRatio: false,
+                responsive: true,
+                legend: {
+                    display: false,
+                    labels: {
+                        fontColor: 'rgb(255, 99, 132)'
+                    }
+                },
+                scales: {
+                   xAxes: [{
+                       ticks: {
+                           display: false //this will remove only the label
+                       },
+                      display: true,
+                      scaleLabel: {
+                         display: true,
+                         labelString: 'Time'
+                      },
+                      gridLines: {
+                        display: true,
+                        color: "rgba(255,99,132,0.2)"
+                      }
+                   }],
+                   yAxes: [{
+                     gridLines: {
+                       display: true,
+                       color: "rgba(255,99,132,0.2)"
+                     }
+                   }],
+                },
+              }
+
+            var lineChart = new Chart(ctx, {
+            type: 'line',
+            data: data,
+            options: options
+        });
+        </script>
+    </div>
+  </div>
+  <div class="graphtitle"> 3M </div>
+  <div class="graph">
+    <div class="graphcontainer">
+        <canvas id="3M"></canvas>
+        <script>
+            var canvas = document.getElementById("3M");
+            var ctx = canvas.getContext('2d');
+            var stroke1 = ctx.createLinearGradient(0, 0, 1000, 0);
+            stroke1.addColorStop(0, 'rgb(254,235,226)');
+            stroke1.addColorStop(.25, 'rgb(251,180,185)');
+            stroke1.addColorStop(.5, 'rgb(247,104,161)');
+            stroke1.addColorStop(.75, 'rgb(197,27,138)');
+            stroke1.addColorStop(1, 'rgb(122,1,119)');
+
+            var stroke2 = ctx.createLinearGradient(0, 0, 1000, 0);
+            stroke2.addColorStop(0, 'rgb(241,238,246)');
+            stroke2.addColorStop(.25, 'rgb(189,201,225)');
+            stroke2.addColorStop(.5, 'rgb(116,169,207)');
+            stroke2.addColorStop(.75, 'rgb(43,140,190)');
+            stroke2.addColorStop(1, 'rgb(4,90,141)');
+
+            Chart.defaults.global.defaultFontSize = 16;
+            Chart.defaults.global.defaultFontFamily = 'Roboto';
+            Chart.defaults.global.defaultFontColor = '#CCCCCC';
+
+            var data = {
+              labels : [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
+              datasets : [
+                  {
+                    label: "Predicted",
+                      backgroundColor: 'rgba(247,104,161, .1)',
+                      borderColor: stroke1,
+                      pointBackgroundColor: stroke1,
+                      data: [197.1456192152631, 197.12880105723858, 197.11198395672483, 197.09516791365525, 197.07835292796346, 197.06153899958292, 197.0447261284471, 197.02791431448964, 197.01110355764402, 196.9942938578437, 196.97748521502228, 196.9606776291133, 196.94387110005025, 196.9270656277667, 196.91026121219622, 196.8934578532724, 196.87665555092872, 196.8598543050988, 196.8430541157162, 196.82625498271443, 196.80945690602712, 196.79265988558785, 196.77586392133023, 196.7590690131878, 196.74227516109417, 196.7254823649829, 196.7086906247877, 196.69189994044206, 196.67511031187965, 196.65832173903405, 196.6415342218389]
+                  },
+                  {
+                    label: "Actual",
+                    backgroundColor: 'rgba(116,169,207, .1)',
+                      borderColor: stroke2,
+                      pointBackgroundColor: stroke2,
+                    data: [190.949997, 183.759995, 191.320007, 190.880005, 191.679993, 192.300003, 193.600006, 192.21000700000002, 192.169998, 188.940002, 189.479996, 191.71000700000002, 195.860001, 192.259995, 192.28999299999998, 192.520004, 195.899994, 193.199997, 196.949997, 199.270004, 200.300003, 199.16000400000001, 200.21000700000002, 201.119995, 202.570007, 199.83999599999999, 199.820007, 200.91000400000001, 206.570007, 209.72000099999997, 204.929993, 208.860001]
+                  }
+                ],
+              }
+              var options = {
+                maintainAspectRatio: false,
+                responsive: true,
+                legend: {
+                    display: false,
+                    labels: {
+                        fontColor: 'rgb(255, 99, 132)'
+                    }
+                },
+                scales: {
+                   xAxes: [{
+                       ticks: {
+                           display: false //this will remove only the label
+                       },
+                      display: true,
+                      scaleLabel: {
+                         display: true,
+                         labelString: 'Time'
+                      },
+                      gridLines: {
+                        display: true,
+                        color: "rgba(255,99,132,0.2)"
+                      }
+                   }],
+                   yAxes: [{
+                     gridLines: {
+                       display: true,
+                       color: "rgba(255,99,132,0.2)"
+                     }
+                   }],
+                },
+              }
+
+            var lineChart = new Chart(ctx, {
+            type: 'line',
+            data: data,
+            options: options
+        });
+        </script>
+    </div>
+  </div>
   </body>
 
 </html>
