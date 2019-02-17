@@ -2,14 +2,14 @@
 <html>
   <head>
       <meta charset="utf-8" />
-      <title>Hi</title>
+      <title>2019 Datathon</title>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
       <link rel="stylesheet" href="static/style.css">
       <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
   </head>
 
   <body>
-  	<div class="graphtitle"> Bayer </div>
+  	<div class="graphtitle"> Bayer  Predicted and Actual Closing Prices</div>
     <div class="graph">
   	<div class="graphcontainer">
       	<canvas id="Bayer"></canvas>
@@ -35,7 +35,7 @@
             Chart.defaults.global.defaultFontColor = '#CCCCCC';
 
          		var data = {
-         			labels : [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
+         			labels : ['2019-01-02', '2019-01-03', '2019-01-04', '2019-01-07', '2019-01-08', '2019-01-09', '2019-01-10', '2019-01-11', '2019-01-14', '2019-01-15', '2019-01-16', '2019-01-17', '2019-01-18', '2019-01-22', '2019-01-23', '2019-01-24', '2019-01-25', '2019-01-28', '2019-01-29', '2019-01-30', '2019-01-31', '2019-02-01', '2019-02-04', '2019-02-05', '2019-02-06', '2019-02-07', '2019-02-08', '2019-02-11', '2019-02-12', '2019-02-13', '2019-02-14'],
          			datasets : [
             			{
               			label: "Predicted",
@@ -65,12 +65,16 @@
             		scales: {
     	             xAxes: [{
                        ticks: {
-                           display: false //this will remove only the label
+                           display: true,
+                           autoSkip: true,
+                           maxTicksLimit: 12,
+                           maxRotation: 45,
+                           minRotation: 45
                        },
       	              display: true,
     	                scaleLabel: {
     	                   display: true,
-    	                   labelString: 'Time'
+    	                   labelString: 'Date'
                       },
                       gridLines: {
                         display: true,
@@ -81,7 +85,11 @@
                      gridLines: {
                        display: true,
                        color: "rgba(255,99,132,0.2)"
-                     }
+                     },
+                     scaleLabel: {
+                        display: true,
+                        labelString: 'Closing Price'
+                     },
                    }],
                 },
   			      }
@@ -94,7 +102,7 @@
       	</script>
     </div>
   </div>
-  <div class="graphtitle"> Synchrony </div>
+  <div class="graphtitle"> Synchrony Predicted and Actual Closing Prices</div>
   <div class="graph">
     <div class="graphcontainer">
         <canvas id="Synchrony"></canvas>
@@ -120,7 +128,7 @@
             Chart.defaults.global.defaultFontColor = '#CCCCCC';
 
             var data = {
-              labels : [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
+              labels : ['2019-01-02', '2019-01-03', '2019-01-04', '2019-01-07', '2019-01-08', '2019-01-09', '2019-01-10', '2019-01-11', '2019-01-14', '2019-01-15', '2019-01-16', '2019-01-17', '2019-01-18', '2019-01-22', '2019-01-23', '2019-01-24', '2019-01-25', '2019-01-28', '2019-01-29', '2019-01-30', '2019-01-31', '2019-02-01', '2019-02-04', '2019-02-05', '2019-02-06', '2019-02-07', '2019-02-08', '2019-02-11', '2019-02-12', '2019-02-13', '2019-02-14'],
               datasets : [
                   {
                     label: "Predicted",
@@ -149,13 +157,17 @@
                 },
                 scales: {
                    xAxes: [{
-                       ticks: {
-                           display: false //this will remove only the label
-                       },
+                     ticks: {
+                         display: true,
+                         autoSkip: true,
+                         maxTicksLimit: 12,
+                         maxRotation: 45,
+                         minRotation: 45
+                     },
                       display: true,
                       scaleLabel: {
                          display: true,
-                         labelString: 'Time'
+                         labelString: 'Date'
                       },
                       gridLines: {
                         display: true,
@@ -166,7 +178,11 @@
                      gridLines: {
                        display: true,
                        color: "rgba(65,182,196, .2)"
-                     }
+                     },
+                     scaleLabel: {
+                        display: true,
+                        labelString: 'Closing Price'
+                     },
                    }],
                 },
               }
@@ -179,7 +195,7 @@
         </script>
     </div>
   </div>
-  <div class="graphtitle"> Honeywell </div>
+  <div class="graphtitle"> Honeywell Predicted and Actual Closing Prices </div>
   <div class="graph">
     <div class="graphcontainer">
         <canvas id="Honeywell"></canvas>
@@ -205,7 +221,7 @@
             Chart.defaults.global.defaultFontColor = '#CCCCCC';
 
             var data = {
-              labels : [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
+              labels : ['2019-01-02', '2019-01-03', '2019-01-04', '2019-01-07', '2019-01-08', '2019-01-09', '2019-01-10', '2019-01-11', '2019-01-14', '2019-01-15', '2019-01-16', '2019-01-17', '2019-01-18', '2019-01-22', '2019-01-23', '2019-01-24', '2019-01-25', '2019-01-28', '2019-01-29', '2019-01-30', '2019-01-31', '2019-02-01', '2019-02-04', '2019-02-05', '2019-02-06', '2019-02-07', '2019-02-08', '2019-02-11', '2019-02-12', '2019-02-13', '2019-02-14'],
               datasets : [
                   {
                     label: "Predicted",
@@ -234,13 +250,17 @@
                 },
                 scales: {
                    xAxes: [{
-                       ticks: {
-                           display: false //this will remove only the label
-                       },
+                     ticks: {
+                         display: true,
+                         autoSkip: true,
+                         maxTicksLimit: 12,
+                         maxRotation: 45,
+                         minRotation: 45
+                     },
                       display: true,
                       scaleLabel: {
                          display: true,
-                         labelString: 'Time'
+                         labelString: 'Date'
                       },
                       gridLines: {
                         display: true,
@@ -251,7 +271,11 @@
                      gridLines: {
                        display: true,
                        color: "rgba(255,99,132,0.2)"
-                     }
+                     },
+                     scaleLabel: {
+                        display: true,
+                        labelString: 'Closing Price'
+                     },
                    }],
                 },
               }
@@ -264,7 +288,7 @@
         </script>
     </div>
   </div>
-  <div class="graphtitle"> 3M </div>
+  <div class="graphtitle"> 3M Predicted and Actual Closing Prices </div>
   <div class="graph">
     <div class="graphcontainer">
         <canvas id="3M"></canvas>
@@ -290,7 +314,7 @@
             Chart.defaults.global.defaultFontColor = '#CCCCCC';
 
             var data = {
-              labels : [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
+              labels : ['2019-01-02', '2019-01-03', '2019-01-04', '2019-01-07', '2019-01-08', '2019-01-09', '2019-01-10', '2019-01-11', '2019-01-14', '2019-01-15', '2019-01-16', '2019-01-17', '2019-01-18', '2019-01-22', '2019-01-23', '2019-01-24', '2019-01-25', '2019-01-28', '2019-01-29', '2019-01-30', '2019-01-31', '2019-02-01', '2019-02-04', '2019-02-05', '2019-02-06', '2019-02-07', '2019-02-08', '2019-02-11', '2019-02-12', '2019-02-13', '2019-02-14'],
               datasets : [
                   {
                     label: "Predicted",
@@ -319,13 +343,17 @@
                 },
                 scales: {
                    xAxes: [{
-                       ticks: {
-                           display: false //this will remove only the label
-                       },
+                     ticks: {
+                         display: true,
+                         autoSkip: true,
+                         maxTicksLimit: 12,
+                         maxRotation: 45,
+                         minRotation: 45
+                     },
                       display: true,
                       scaleLabel: {
                          display: true,
-                         labelString: 'Time'
+                         labelString: 'Date'
                       },
                       gridLines: {
                         display: true,
@@ -336,7 +364,11 @@
                      gridLines: {
                        display: true,
                        color: "rgba(255,99,132,0.2)"
-                     }
+                     },
+                     scaleLabel: {
+                        display: true,
+                        labelString: 'Closing Price'
+                     },
                    }],
                 },
               }
