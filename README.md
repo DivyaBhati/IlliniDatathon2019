@@ -1,10 +1,12 @@
 # Illini Datathon 2019
 
-For this project we trialled several machine learning algorithms to predict the stock prices for Bayer, Honeywell, 3m, and Synchrony from January 1 2019 until present day (February 17). We graphed the actual stock prices and our predictions. An example graph is below, and the rest our in the visualization folder.
+For this project we trialled several machine learning algorithms to predict the stock prices for Bayer, Honeywell, 3m, and Synchrony from January 1 2019 until present day (February 17). We graphed the actual stock prices and our predictions. An example graph image is below. The rest can be found in their interactive forms [here.](https://www.divyabhati.com/datathon)
 
-![Zebra Video](https://github.com/danielferriss/convert-to-ascii/blob/master/media/zebra.gif)
+![Bayer Graph](https://github.com/DivyaBhati/IlliniDatathon2019/blob/master/Bayer.png)
 
-We got supplemental data by analysing the sentiment of each companies' 10-K reports, which are 
+We got supplemental data by analysing the sentiment of each companies' 10-K reports, which are financial statements for the past year. We attempted to use New York Times articles but we got rate limited by the API.
+
+
 ## Built With
 
 * [scikit-learn](https://scikit-learn.org/stable/) - Used to make our models
@@ -35,3 +37,4 @@ We got supplemental data by analysing the sentiment of each companies' 10-K repo
 * Hutto, C.J. & Gilbert, E.E. (2014). VADER: A Parsimonious Rule-based Model for
 Sentiment Analysis of Social Media Text. Eighth International Conference on
 Weblogs and Social Media (ICWSM-14). Ann Arbor, MI, June 2014.
+* Panda Express, thanks for the food
